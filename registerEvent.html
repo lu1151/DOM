@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>ie9 attachEvent</button>
+    <script>
+        var btns = document.querySelectorAll("button");
+        btns[0].onclick = function () {
+            alert("Hi");
+        }
+        btns[0].onclick = function () {
+            alert("Hello");
+        }
+
+        btns[1].addEventListener("click", function () {
+            alert("How are you?");
+        })
+        btns[1].addEventListener("click", function () {
+            alert("How do you do?");
+        })
+
+        btns[2].attachEvent("onclick", function () {
+            alert("What's up?");
+        })
+    </script>
+</body>
+
+</html>

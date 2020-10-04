@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Score</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        var datas = [{
+            name: "Adam",
+            subject: "JavaScript",
+            score: 100
+        }, {
+            name: "Nick",
+            subject: "JavaScript",
+            score: 98
+        }, {
+            name: "John",
+            subject: "JavaScript",
+            score: 99
+        }, {
+            name: "Alex",
+            subject: "JavaScript",
+            score: 88
+        }, {
+            name: "Tony",
+            subject: "JavaScript",
+            score: 0
+        }];
+
+        var tbody = document.querySelector("tbody");
+        for (var i = 0; i < datas.length; i++) {
+            var tr = document.createElement("tr");
+            tbody.appendChild(tr);
+            for (var j in datas[i]) {
+                var td = document.createElement("td");
+                td.innerHTML = datas[i][j];
+                tr.appendChild(td);
+
+            }
+            var td = document.createElement("td");
+            td.innerHTML = "<a href='javascript:;'>Delete</a>";
+            tr.appendChild(td);
+        }
+        var a = document.querySelectorAll("a");
+        for (var i = 0; i < a.length; i++) {
+            a[i].onclick = function () {
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

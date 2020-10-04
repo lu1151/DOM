@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+
+    <script>
+        // document.onkeyup= function(){
+        //     console.log("Hello");
+        // }
+
+        // document.addEventListener("keydown", function(){
+        //     console.log("Hi");
+        // })
+
+        // document.addEventListener("keypress",function(){
+        //     console.log("How do you do?");
+        // })
+
+        // document.addEventListener("keyup", function (e) {
+        //     console.log("up: " + e.keyCode);
+        //     if (e.keyCode === 65) {
+        //         alert("A");
+        //     } else {
+        //         alert("Not A")
+        //     }
+        // })
+
+        // document.addEventListener("keypress", function (e) {
+        //     console.log("press: " + e.keyCode);
+        // })
+
+        // Press "s" key I-cursor to sreach
+        var ipt = document.querySelector("input");
+        document.addEventListener("keyup", function (e) {
+            console.log(e.keyCode);
+            if (e.keyCode === 83) {
+                ipt.focus();
+            }
+        })
+    </script>
+</body>
+
+</html>

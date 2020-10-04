@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click</button>
+    <p>ABC</p>
+    <div class="inner"></div>
+    <script>
+        var btn = document.querySelector("button");
+        btn.onclick = function(){
+            document.write("<div>123</div>");
+        }
+
+        var inner = document.querySelector(".inner")
+        var arr = [];
+        for (var i=0;i<100;i++){
+            arr.push("<a href='#'>Google</a>");
+        }
+        inner.innerHTML = arr.join("<br>");
+    </script>
+</body>
+</html>

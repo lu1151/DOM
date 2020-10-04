@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .search {
+            position: relative;
+            width: 178px;
+            margin: 100px;
+        }
+
+        .con {
+            display: none;
+            position: absolute;
+            border: 1px solid rgba(0, 0, 0, .2);
+            top: -40px;
+            width: 171px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+            font-size: 18px;
+            line-height: 20px;
+            color: #333;
+            padding: 5px 0;
+        }
+
+        .con::before {
+            content: "";
+            border: 8px solid #000;
+            width: 0;
+            height: 0;
+            top: 28px;
+            left: 18px;
+            position: absolute;
+            border-style: solid dashed dashed;
+            border-color: white transparent transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con"></div>
+        <input type="text" placeholder="Enter tracking number" class="ipt">
+    </div>
+    <script>
+        var con = document.querySelector(".con");
+        var ipt = document.querySelector(".ipt");
+        ipt.addEventListener("keyup", function (e) {
+            if (this.value == "") {
+                con.style.display = "none";
+            } else {
+                con.style.display = "block";
+                con.innerHTML = this.value;
+            }
+        })
+        ipt.addEventListener("blur", function () {
+            con.style.display = "none";
+        })
+        ipt.addEventListener("focus", function () {
+            if (this.value !== "") {
+                con.style.display = "block";
+            }
+        })
+    </script>
+
+</body>
+
+</html>

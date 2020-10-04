@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="" value="Start Here">
+    <script>
+        var ipt = document.querySelector("input");
+        ipt.onfocus = function () {
+            if (this.value === "Start Here") {
+                this.value = "";
+            }
+            this.style.color = "#333";
+        }
+        ipt.onblur = function () {
+            if (this.value === "") {
+                this.value = "Start Here";
+            }
+            this.style.color = "#999"
+        }
+    </script>
+</body>
+
+</html>

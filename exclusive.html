@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: absolute;
+            top: 250px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        button {
+            width: 30px;
+            height: 20px;
+        }
+
+        body {
+            background: url(/img/1.jpg) no-repeat center top;
+        }
+
+        ul {
+            overflow: hidden;
+            margin: 100px auto;
+            width: 664px;
+            padding-top: 3px;
+            background-color: #fff;
+        }
+
+        ul li {
+            float: left;
+            list-style: none;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+
+        ul li img {
+            width: 160px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button>A</button>
+        <button>B</button>
+        <button>C</button>
+        <button>D</button>
+        <button>E</button>
+    </div>
+    <ul>
+        <li><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+    </ul>
+
+    <script>
+        var btns = document.getElementsByTagName("button")
+        for (i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                for (i = 0; i < btns.length; i++) {
+                    btns[i].style.backgroundColor = "";
+                }
+                this.style.backgroundColor = "pink";
+            }
+        }
+
+        var bgs = document.querySelector("ul").querySelectorAll("img");
+        for (var i = 0; i < bgs.length; i++) {
+            bgs[i].onclick = function () {
+                document.body.style.backgroundImage = "url(" + this.src + ") "
+            }
+        }
+    </script>
+</body>
+
+</html>
